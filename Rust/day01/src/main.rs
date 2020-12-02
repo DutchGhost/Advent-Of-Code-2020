@@ -50,6 +50,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let p1 = solve(v.iter().copied(), TARGET);
     let p2 = solve2(v.iter().copied(), TARGET);
 
-    println!("Part 1: {:?}\nPart2: {:?}", p1, p2);
+    println!("Part 1: {:?}\nPart 2: {:?}", p1, p2);
     Ok(())
 }

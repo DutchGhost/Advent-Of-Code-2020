@@ -20,21 +20,21 @@ pub fn parseInput(slice: []const u8, allocator: *mem.Allocator) !ArrayList(usize
     return nums;
 }
 
-pub fn part1(slice: []const usize) !usize {
+pub fn part1(slice: []const usize, target: usize) !usize {
     for (slice) |x, idx| {
         for (slice[idx..]) |y| {
-            if (x + y == TARGET) {
+            if (x + y == target) {
                 return x * y;
             }
         }
     } else return error.SolutionNotFound;
 }
 
-pub fn part2(slice: []const usize) !usize {
+pub fn part2(slice: []const usize, target: usize) !usize {
     for (slice) |x, idx| {
         for (slice[idx..]) |y, idx2| {
             for (slice[idx2..]) |z| {
-                if (x + y + z == TARGET) {
+                if (x + y + z == target) {
                     return x * y * z;
                 }
             }
@@ -56,8 +56,8 @@ pub fn main() anyerror!void {
 
     const slice = numbers.items;
 
-    const p1 = try part1(slice);
-    const p2 = try part2(slice);
+    const p1 = try part1(slice, TARGET);
+    const p2 = try part2(slice, TARGET);
 
-    std.debug.print("p1 = {}\np2 = {}\n", .{ p1, p2 });
+    std.debug.print("Part 1: {}\nPart 2: {}\n", .{ p1, p2 });
 }

@@ -56,5 +56,5 @@ pub fn main() anyerror!void {
         }
     }
 
-    std.debug.print("p1 = {}\np2 = {}", .{ validsPart1, validsPart2 });
+    std.debug.print("Part 1: {}\nPart 2: {}", .{ validsPart1, validsPart2 });
 }
