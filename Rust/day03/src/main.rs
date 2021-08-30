@@ -49,7 +49,7 @@ fn part2(map: &str) -> usize {
     CONFIGS
         .iter()
         .map(|config| traverse(map, *config))
-        .fold(1, |acc, trees| acc * trees)
+        .product()
 }
 fn main() {
     let p1 = part1(INPUT);
