@@ -13,7 +13,7 @@ pub fn parse<T: FromStr>(input: &'_ str) -> impl Iterator<Item = Result<T, T::Er
 pub fn solve<I, T>(it: I, target: T) -> Option<T>
 where
     I: Clone + Iterator<Item = T>,
-    T: Copy + PartialEq + Add<Output = T> + Mul<Output = T> 
+    T: Copy + PartialEq + Add<Output = T> + Mul<Output = T>,
 {
     for (idx, x) in it.clone().enumerate() {
         for y in it.clone().skip(idx) {
@@ -29,7 +29,7 @@ where
 pub fn solve2<I, T>(it: I, target: T) -> Option<T>
 where
     I: Clone + Iterator<Item = T>,
-    T: Copy + PartialEq + Add<Output = T> + Mul<Output = T>
+    T: Copy + PartialEq + Add<Output = T> + Mul<Output = T>,
 {
     for (idx, x) in it.clone().enumerate() {
         for (idx2, y) in it.clone().enumerate().skip(idx) {
