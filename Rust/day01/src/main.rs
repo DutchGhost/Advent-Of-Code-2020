@@ -23,7 +23,7 @@ where
         }
     }
 
-    return None;
+    None
 }
 
 pub fn solve2<I, T>(it: I, target: T) -> Option<T>
@@ -41,7 +41,7 @@ where
         }
     }
 
-    return None;
+    None
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {

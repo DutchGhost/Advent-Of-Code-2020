@@ -35,7 +35,7 @@ impl Password<'_> {
         let a = bytes[self.begin - 1] == self.letter;
         let b = bytes[self.end - 1] == self.letter;
 
-        !(a == b)
+        a != b
     }
 }
 
