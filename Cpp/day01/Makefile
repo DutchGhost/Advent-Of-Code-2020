@@ -1,10 +1,10 @@
 CC = g++
 
 build:
-	g++ main.cpp -std=c++20 -o day01
+	g++ main.cpp -std=c++20 -o target/day01
 
 run: build
-	./day01
+	./target/day01
 
 clean:
-	rm -f day01
+	rm -f target/day01
