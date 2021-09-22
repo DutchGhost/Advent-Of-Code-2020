@@ -8,29 +8,16 @@ struct Config {
 }
 
 fn traverse(map: &str, config: Config) -> usize {
-    let mut lines = map.lines();
-    let mut trees = 0;
-
     let mut x = 0;
-
-    while let Some(line) = lines.next() {
-        let skip = config.down - 1;
-
-        for _ in 0..skip {
-            lines.next();
-        }
-        let vx = x % line.len();
-
-        if let Some(square) = line.as_bytes().get(vx) {
-            if *square == TREE {
-                trees += 1;
-            }
-        }
-
-        x += config.right;
-    }
-
-    trees
+    map.lines()
+        .step_by(config.down)
+        .filter_map(|line| {
+            let vx = x % line.len();
+            x += config.right;
+            line.as_bytes().get(vx)
+        })
+        .filter(|square| **square == TREE)
+        .count()
 }
 
 fn part1(map: &str) -> usize {
