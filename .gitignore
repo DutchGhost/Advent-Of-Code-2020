@@ -5,3 +5,8 @@
 
 # Zig files
 /**/zig-cache/
+
+# C out files
+/**/a.out
+**/**/a.out
+/C/**/a.out
